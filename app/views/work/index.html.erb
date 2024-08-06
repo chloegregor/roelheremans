@@ -1,0 +1,11 @@
+<div class="list">
+  <% @works.each do |w|%>
+  <%= link_to w.title, work_path(w.id)%>
+  <%end%>
+</div>
+
+<% @works.each do |w|%>
+  <%= image_tag w.photos.first.url %>
+  <%= w.title %>
+  <%= w.year%>
+<%end %>

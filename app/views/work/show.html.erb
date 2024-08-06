@@ -1,0 +1,17 @@
+<div class="list">
+  <% @works.each do |w|%>
+  <%= link_to w.title, @work%>
+  <%end%>
+</div>
+
+  <%= @work.title %>
+  <%= @work.year%>
+  <% @work.photos.each do |photo| %>
+     <%= image_tag photo.url, alt: photo.legend, class: 'work-photo' %>
+     <p><%= photo.legend %></p>
+  <%end %>
+<% if @work.videos.any? %>
+  <% @work.videos.each do |video| %>
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
+  <%end %>
+<%end %>

@@ -8,4 +8,8 @@ class Video < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     %w[work]
   end
+
+  def youtube_id
+    url.split("=").last
+  end
 end
