@@ -1,0 +1,19 @@
+
+.flex {
+  display: flex;
+}
+
+.list {
+  width: 20%;
+}
+
+.explore,
+.show{
+padding: 2%
+}
+
+
+.explore img,
+.show img {
+ width: 100%;
+}
