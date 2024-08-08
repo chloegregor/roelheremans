@@ -7,7 +7,7 @@ ActiveAdmin.register Work do
   #
   permit_params :title, :description, :year,
                 photos_attributes: [:id, :url, :legend, :cover, :_destroy],
-                videos_attributes: [:id, :url, :_destroy]
+                videos_attributes: [:id, :url, :cover, :_destroy]
 
   form do |f|
     f.inputs 'Work' do
@@ -25,6 +25,7 @@ ActiveAdmin.register Work do
     f.inputs 'Videos' do
       f.has_many :videos, heading: false, allow_destroy: true do |video|
         video.input :url
+        video.input :cover, as: :boolean
       end
     end
     f.actions
