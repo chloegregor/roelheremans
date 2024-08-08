@@ -1,8 +1,9 @@
 <div class="flex">
   <div class="list">
-    <% @works.each do |w|%>
-    <%= link_to w.title, @work%>
+    <ul><% @works.each do |w|%>
+    <li><%= link_to w.title, work_path(w.id)%></li>
     <%end%>
+    </ul>
   </div>
 
   <div class="show">
