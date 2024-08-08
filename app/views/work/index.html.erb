@@ -1,11 +1,16 @@
-<div class="list">
-  <% @works.each do |w|%>
-  <%= link_to w.title, work_path(w.id)%>
-  <%end%>
-</div>
+<div class="flex">
+  <div class="list">
+    <% @works.each do |w|%>
+    <%= link_to w.title, work_path(w.id)%>
+    <%end%>
+  </div>
 
-<% @works.each do |w|%>
-  <%= image_tag w.photos.first.url %>
-  <%= w.title %>
-  <%= w.year%>
-<%end %>
+<div class="explore">
+  <% @works.each do |w|%>
+    <%= link_to work_path(w.id) do %>
+      <%=image_tag w.photos.where(cover: true).first.url%>
+    <%end %>
+      <p><%= w.title %>, <%= w.year%><p>
+  <%end %>
+</div>
+</div>

@@ -6,8 +6,8 @@ ActiveAdmin.register Work do
   # Uncomment all parameters which should be permitted for assignment
   #
   permit_params :title, :description, :year,
-                photos_attributes: [:url, :legend, :cover, :_destroy],
-                videos_attributes: [:url, :_destroy]
+                photos_attributes: [:id, :url, :legend, :cover, :_destroy],
+                videos_attributes: [:id, :url, :_destroy]
 
   form do |f|
     f.inputs 'Work' do
@@ -19,6 +19,7 @@ ActiveAdmin.register Work do
       f.has_many :photos, heading: false, allow_destroy: true do |photo|
         photo.input :url
         photo.input :legend
+        photo.input :cover, as: :boolean
       end
     end
     f.inputs 'Videos' do
