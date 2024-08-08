@@ -1,23 +1,36 @@
 <div class="flex">
   <div class="list">
+     <%= link_to root_path do %>
+      <%=image_tag 'https://res.cloudinary.com/dmbutdgsi/image/upload/v1611342976/logo_ef1290df81.png', class:"logo" %>
+    <%end %>
     <ul><% @works.each do |w|%>
-    <li><%= link_to w.title, work_path(w.id)%></li>
+    <li><%= link_to w.title, work_path(w.id), class:'link'%></li>
     <%end%>
     </ul>
   </div>
 
   <div class="show">
-    <%= @work.title %>
-    <%= @work.year%>
-    <%= @work.description%>
-    <% @work.photos.each do |photo| %>
-      <%= image_tag photo.url, alt: photo.legend, class: 'work-photo' %>
-      <p><%= photo.legend %></p>
+    <div class="work">
+      <h1><%= @work.title %>, <%=@work.year%></h1>
+      <div class="image">
+        <%first_photo = @work.photos.first%>
+      <%= image_tag first_photo.url, alt: first_photo.legend, class: 'work-photo' %>
+          <p><%= first_photo.legend %></p>
+      </div>
+      <p><%= @work.description%></p>
+      <%other_photos = @work.photos.drop(1) %>
+      <% other_photos.each do |photo| %>
+        <div class="image">
+          <%= image_tag photo.url, alt: photo.legend, class: 'work-photo' %>
+          <p><%= photo.legend %></p>
+        </div>
+      <%end %>
+    <% if @work.videos.any? %>
+      <% @work.videos.each do |video| %>
+        <div class="video">
+          <iframe width="1000" height="563" src="https://www.youtube.com/embed/<%=video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
+        </div>
+      <%end %>
     <%end %>
-  <% if @work.videos.any? %>
-    <% @work.videos.each do |video| %>
-      <iframe width="560" height="315" src="https://www.youtube.com/embed/<%=video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
-    <%end %>
-  <%end %>
   </div>
 </div>

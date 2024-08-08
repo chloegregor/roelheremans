@@ -1,21 +1,29 @@
 <div class="flex">
   <div class="list">
+     <%= link_to root_path do %>
+      <%=image_tag 'https://res.cloudinary.com/dmbutdgsi/image/upload/v1611342976/logo_ef1290df81.png', class:"logo" %>
+      <%end %>
     <ul><% @works.each do |w|%>
-    <li><%= link_to w.title, work_path(w.id)%></li>
+    <li><%= link_to w.title, work_path(w.id), class:'link'%></li>
     <%end%>
     </ul>
   </div>
 
-<div class="explore">
-    <% @works.each do |w|%>
-      <%= link_to work_path(w.id) do %>
-        <%if w.photos.where(cover: true).first %>
-          <%=image_tag w.photos.where(cover: true).first.url%>
-        <%else %>
-          <iframe width="1000" height="563" src="https://www.youtube.com/embed/<%=w.videos.where(cover: true).first.youtube_id%>" frameborder="0" allowfullscreen></iframe>
-        <%end%>
+  <div class="explore">
+    <div class="container">
+      <% @works.each do |w|%>
+        <div class="work">
+            <%= link_to work_path(w.id) do %>
+              <%if w.photos.where(cover: true).first %>
+                <%=image_tag w.photos.where(cover: true).first.url%>
+              <%else %>
+                <iframe width="1000" height="563" src="https://www.youtube.com/embed/<%=w.videos.where(cover: true).first.youtube_id%>" frameborder="0" allowfullscreen></iframe>
+              <%end%>
+            <%end %>
+            <% txtlink = "#{w.title}, #{w.year}"%>
+              <%= link_to txtlink, work_path(w.id), class:'link'%>
+        </div>
       <%end %>
-        <p><%= w.title %>, <%= w.year%><p>
-    <%end %>
+    </div>
   </div>
 </div>
