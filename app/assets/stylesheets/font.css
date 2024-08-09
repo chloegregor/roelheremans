@@ -28,6 +28,10 @@ p{
   font-size: 1.5em;
 }
 
+.container .link:hover{
+  text-decoration: underline;
+}
+
 ul{
   list-style-type: none;
 }
@@ -44,3 +48,19 @@ li{
   font-style: italic;
 }
 /* Additional CSS rules for your app */
+
+.color-hover0:hover{
+  color: #ff3f3f;
+}
+
+.color-hover1:hover{
+  color: #568337;
+}
+
+.color-hover2:hover{
+  color: #e5e234;
+}
+
+.color-hover3:hover{
+  color: #0170C0;
+}
