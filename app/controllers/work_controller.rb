@@ -1,10 +1,10 @@
 class WorkController < ApplicationController
   def index
-    @works = Work.all
+    @works = Work.order(year: :desc)
   end
 
   def show
-    @works = Work.all
+    @works = Work.order(year: :desc)
     @work = Work.find(params[:id])
   end
 
