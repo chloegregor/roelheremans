@@ -4,14 +4,23 @@
 h1{
   font-family: 'Inter', sans-serif;
   color: black;
-  margin: 0px 0px 2em 0px;
+  margin: 0px 0px 0.1em 0px;
   font-weight: bold;
 }
 
+h2{
+  font-family: 'Inter', sans-serif;
+  color: black;
+  margin: 0px 0px 0.1em 0px;
+  font-weight:normal;
+  margin: 0px 0px 0em 0px;
+  font-size: 1.5em;
+}
 p{
   font-family: 'Roboto', sans-serif;
   font-size: 1.5em;
   margin: 2em 0px 4em 0px;
+  text-align: justify;
 }
 
 .list .link {

@@ -12,7 +12,10 @@
 
   <div class="show">
     <div class="work">
-      <h1><%= @work.title %>, <%=@work.year%></h1>
+      <div class="entete">
+        <h1><%= @work.title %></h1>
+        <h2><%= @work.year %></h2>
+      </div>
       <div class="image">
         <%first_photo = @work.photos.first%>
       <%= image_tag first_photo.url, alt: first_photo.legend %>
@@ -33,7 +36,7 @@
     <% if @work.videos.any? %>
       <% @work.videos.each do |video| %>
         <div class="video">
-          <iframe width="1000" height="563" src="https://www.youtube.com/embed/<%=video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
+          <iframe width="800" height="450" src="https://www.youtube.com/embed/<%=video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
         </div>
       <%end %>
     <%end %>

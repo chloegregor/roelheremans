@@ -18,7 +18,7 @@
               <%if w.photos.where(cover: true).first %>
                 <%=image_tag w.photos.where(cover: true).first.url%>
               <%else %>
-                <iframe width="1000" height="563" src="https://www.youtube.com/embed/<%=w.videos.where(cover: true).first.youtube_id%>" frameborder="0" allowfullscreen></iframe>
+                <iframe width="800" height="450" src="https://www.youtube.com/embed/<%=w.videos.where(cover: true).first.youtube_id%>" frameborder="0" allowfullscreen></iframe>
               <%end%>
             <%end %>
             <% txtlink = "#{w.title}, #{w.year}"%>
