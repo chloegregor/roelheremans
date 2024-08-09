@@ -4,13 +4,14 @@
 h1{
   font-family: 'Inter', sans-serif;
   color: black;
-  margin: 0px;
+  margin: 0px 0px 2em 0px;
+  font-weight: bold;
 }
 
 p{
   font-family: 'Roboto', sans-serif;
   font-size: 1.5em;
-  margin: 0px;
+  margin: 2em 0px 4em 0px;
 }
 
 .list .link {
@@ -33,5 +34,13 @@ ul{
 
 li{
   margin-bottom: 1em;
+}
+
+.legend{
+  font-family: 'Inter', sans-serif;
+  color: rgb(82, 82, 82);
+  font-size: 1.2em;
+  margin: 0px 0px 0em 0px;
+  font-style: italic;
 }
 /* Additional CSS rules for your app */

@@ -1,5 +1,5 @@
 
-
+/*
 * {
   margin: 0;
   padding: 0;
@@ -8,7 +8,7 @@
   border-color: brown;
   border-width:1px ;
 
-}
+} */
 /* .flex {
   display: flex;
 
@@ -35,7 +35,7 @@ align-items: center;
 
 .explore img,
 .show img {
- max-width: 1000px;
+ width: 1000px;
 
 }
 
@@ -53,7 +53,7 @@ align-items: center;
   flex-wrap: wrap;
   align-items: left;
   max-width: 1000px;
-  margin: 1.5em 0 1.5em 0;
+  margin: 3em 0 3em 0;
 }
 
 @keyframes rotate {
@@ -75,11 +75,15 @@ align-items: center;
   width: 40px;
   height: 40px;
   margin-left: 1.5em;
-  margin-top: 1.5em;
-  margin-bottom: 1.5em;
+  margin-top: 3em;
+  margin-bottom: 3em;
   animation: rotate 5.5s infinite;
   }
 
 .image{
-  margin-bottom: 1.5em;
+  margin-bottom: 2em;
+}
+
+.video{
+  margin-bottom: 2em;
 }
