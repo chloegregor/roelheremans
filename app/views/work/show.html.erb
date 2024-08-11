@@ -23,13 +23,15 @@
           <p class="legend"><%= first_photo.legend %></p>
       <%end %>
       </div>
-      <p><%= @work.description%></p>
+      <div class="paragraph">
+      <%= simple_format(@work.description)%>
+      </div>
       <%other_photos = @work.photos.drop(1) %>
       <% other_photos.each do |photo| %>
         <div class="image">
           <%= image_tag photo.url, alt: photo.legend, class: 'work-photo' %>
           <% if photo.legend.present?%>
-            <p><%= photo.legend %></p>
+            <p class="legend"><%= photo.legend %></p>
           <%end %>
         </div>
       <%end %>

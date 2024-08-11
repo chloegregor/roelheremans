@@ -15,10 +15,12 @@
       <% @works.each do |w|%>
         <div class="work">
             <%= link_to work_path(w.id) do %>
-              <%if w.photos.where(cover: true).first %>
-                <%=image_tag w.photos.where(cover: true).first.url%>
-              <%else %>
-                <iframe width="800" height="450" src="https://www.youtube.com/embed/<%=w.videos.where(cover: true).first.youtube_id%>" frameborder="0" allowfullscreen></iframe>
+            <% cover_photo = w.photos.where(cover: true).first%>
+            <% cover_video = w.videos.where(cover: true).first%>
+              <%if cover_photo %>
+                <%=image_tag cover_photo.url%>
+              <%elsif cover_video%>
+                <iframe width="800" height="450" src="https://www.youtube.com/embed/<%=cover_video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
               <%end%>
             <%end %>
             <% txtlink = "#{w.title}, #{w.year}"%>
