@@ -24,12 +24,13 @@
 
 .explore,
 .show{
-margin-left: 300px;
+margin:4em 0 4em 300px;
 width: calc(100% - 300px);
 display: flex;
 flex-direction: column;
 flex-wrap: wrap;
 align-items: center;
+
 }
 
 
@@ -53,7 +54,7 @@ align-items: center;
   flex-wrap: wrap;
   align-items: left;
   width: 600px;
-  margin: 2em 0 2em 0;
+
 }
 
 @keyframes rotate {
@@ -75,7 +76,6 @@ align-items: center;
   width: 30px;
   height: 30px;
   margin-left: 1.5em;
-  margin-top: 2em;
   margin-bottom: 1em;
   animation: rotate 5.5s infinite;
   }
