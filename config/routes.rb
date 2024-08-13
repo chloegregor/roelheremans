@@ -10,6 +10,7 @@ Rails.application.routes.draw do
 
   root "work#index"
   resources :work, only: %i[index show]
+  resource :profil, only: [:show]
   # Define the root path route ("/")
 
   # Defines the root path route ("/")
