@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_08_084059) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_13_091722) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -45,6 +45,15 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_08_084059) do
     t.datetime "updated_at", null: false
     t.boolean "cover", default: false
     t.index ["work_id"], name: "index_photos_on_work_id"
+  end
+
+  create_table "profils", force: :cascade do |t|
+    t.text "about"
+    t.string "email"
+    t.string "pic_url"
+    t.string "cv_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
   end
 
   create_table "videos", force: :cascade do |t|

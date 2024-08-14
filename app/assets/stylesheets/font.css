@@ -6,6 +6,7 @@ h1{
   color: black;
   margin: 0px 0px 0.1em 0px;
   font-weight: bold;
+  font-size: 2em;
 }
 
 h2{
@@ -14,27 +15,29 @@ h2{
   margin: 0px 0px 0.1em 0px;
   font-weight:normal;
   margin: 0px 0px 0em 0px;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 .paragraph{
   font-family: 'Roboto', sans-serif;
-  font-size: 1.5em;
+  font-size: 1em;
   margin: 2em 0px 4em 0px;
   text-align: justify;
+  width: 100%;
 }
 
 .list .link {
   font-family: 'Roboto', sans-serif;
   color: black;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1em;
 }
 
 .container .link {
   font-family: 'Roboto', sans-serif;
   color: black;
   text-decoration: none;
-  font-size: 1.5em;
+  font-size: 1em;
+  margin: 1em 0 1em 0
 }
 
 .container .link:hover{
@@ -46,13 +49,13 @@ ul{
 }
 
 li{
-  margin-bottom: 1em;
+  margin-bottom: 0.8em;
 }
 
 .legend{
   font-family: 'Inter', sans-serif;
   color: rgb(82, 82, 82);
-  font-size: 1.2em;
+  font-size: 0.8em;
   margin: 0px 0px 0em 0px;
   font-style: italic;
 }

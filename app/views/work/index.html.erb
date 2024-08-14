@@ -7,6 +7,7 @@
       <% color_class = "color-hover#{index % 4}"%>
       <li><%= link_to w.title, work_path(w.id), class:'link'" #{color_class}"%></li>
     <%end%>
+    
     </ul>
   </div>
 
@@ -20,7 +21,7 @@
               <%if cover_photo %>
                 <%=image_tag cover_photo.url%>
               <%elsif cover_video%>
-                <iframe width="800" height="450" src="https://www.youtube.com/embed/<%=cover_video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
+                <iframe width="600" height="337.5" src="https://www.youtube.com/embed/<%=cover_video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
               <%end%>
             <%end %>
             <% txtlink = "#{w.title}, #{w.year}"%>
