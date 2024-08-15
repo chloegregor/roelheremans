@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_14_170507) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_15_081839) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -23,6 +23,21 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_14_170507) do
     t.index ["author_type", "author_id"], name: "index_active_admin_comments_on_author"
     t.index ["namespace"], name: "index_active_admin_comments_on_namespace"
     t.index ["resource_type", "resource_id"], name: "index_active_admin_comments_on_resource"
+  end
+
+  create_table "addresses", force: :cascade do |t|
+    t.string "title"
+    t.integer "profil_id", null: false
+    t.string "street"
+    t.string "zip_code"
+    t.string "city"
+    t.string "country"
+    t.string "email"
+    t.string "phone_number"
+    t.string "website"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["profil_id"], name: "index_addresses_on_profil_id"
   end
 
   create_table "admin_users", force: :cascade do |t|
@@ -47,8 +62,6 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_14_170507) do
     t.string "website"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.integer "profil_id", null: false
-    t.index ["profil_id"], name: "index_adresses_on_profil_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -86,7 +99,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_14_170507) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "adresses", "profils"
+  add_foreign_key "addresses", "profils"
   add_foreign_key "photos", "works"
   add_foreign_key "videos", "works"
 end
