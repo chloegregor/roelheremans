@@ -1,0 +1,27 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  exhibitions: MyText
+  personalia: MyText
+  education: MyText
+  grant_and_prizes: MyText
+  residencies: MyText
+  permanent_installations: MyText
+  hosting: MyText
+  teaching: MyText
+  membership: MyText
+  scientific: MyText
+  profils: one
+
+two:
+  exhibitions: MyText
+  personalia: MyText
+  education: MyText
+  grant_and_prizes: MyText
+  residencies: MyText
+  permanent_installations: MyText
+  hosting: MyText
+  teaching: MyText
+  membership: MyText
+  scientific: MyText
+  profils: two

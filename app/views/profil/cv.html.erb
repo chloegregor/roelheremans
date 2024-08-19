@@ -1,0 +1,48 @@
+<div class="flex">
+  <div class="scroll">
+    <div class="list">
+      <%= link_to root_path do %>
+        <%=image_tag 'https://res.cloudinary.com/dmbutdgsi/image/upload/v1611342976/logo_ef1290df81.png', class:"logo" %>
+        <%end %>
+      <ul>
+        <% @works.each_with_index do |w,index|%>
+        <% color_class = "color-hover#{index % 4}"%>
+        <li><%= link_to w.title, work_path(w.id), class:'link'" #{color_class}"%></li>
+        <%end%>
+        <li><%= link_to "cv", cv_profil_path, class: 'link'%></li>
+        <li><%= link_to "about", about_profil_path, class: 'link'%></li>
+        <li><%= link_to "contact", contact_profil_path, class: 'link'%></li>
+      </ul>
+
+    </div>
+  </div>
+   <div class="show">
+    <div class="container">
+      <div class="work">
+        <div class="entete"><h1>CV</h1></div>
+        <div class="marginbottom bold black">Exhibitions</div>
+        <div class=""><%=simple_format(@cv.exhibitions)%></div>
+        <div class="marginbottom margintop bold black">Personalia</div>
+        <div class=""><%=simple_format(@cv.personalia)%></div>
+        <div class="marginbottom margintop bold black">Education</div>
+        <div class=""><%=simple_format(@cv.education)%></div>
+        <div class="marginbottom margintop bold black">Grants & Prizes</div>
+        <div class=""><%=simple_format(@cv.grant_and_prizes)%></div>
+        <div class="marginbottom margintop bold black">Residencies</div>
+        <div class=""><%=simple_format(@cv.residencies)%></div>
+        <div class="marginbottom margintop bold black">Permanent installations</div>
+        <div class=""><%=simple_format(@cv.permanent_installations)%></div>
+        <div class="marginbottom margintop bold black">Hosting</div>
+        <div class=""><%=simple_format(@cv.hosting)%></div>
+        <div class="marginbottom margintop bold black">Teaching</div>
+        <div class=""><%=simple_format(@cv.teaching)%></div>
+        <div class="marginbottom  margintop bold black">Membership</div>
+        <div class=""><%=simple_format(@cv.membership)%></div>
+        <div class="marginbottom margintop bold black">Scientific</div>
+        <div class=""><%=simple_format(@cv.scientific)%></div>
+
+
+      </div>
+    </div>
+  </div>
+</div>
