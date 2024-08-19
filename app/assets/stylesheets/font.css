@@ -46,10 +46,11 @@ h2{
 
 ul{
   list-style-type: none;
+  margin: 0
 }
 
 li{
-  margin-bottom: 0.8em;
+  margin-top: 0.8em;
 }
 
 .legend{
@@ -75,4 +76,20 @@ li{
 
 .color-hover3:hover{
   color: #0170C0;
+}
+
+p{
+  margin:0;
+  color: black;
+  font-family: 'Inter';
+
+}
+
+.bold{
+  font-weight: bold;
+}
+
+.black{
+  color: black;
+  font-size: 1.3em;
 }

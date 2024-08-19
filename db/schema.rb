@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_15_081839) do
+ActiveRecord::Schema[7.1].define(version: 2024_08_19_083119) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -52,16 +52,21 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_15_081839) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "adresses", force: :cascade do |t|
-    t.string "title"
-    t.string "street"
-    t.string "zipcode"
-    t.string "city"
-    t.string "phone_number"
-    t.string "email"
-    t.string "website"
+  create_table "cv", force: :cascade do |t|
+    t.text "exhibitions"
+    t.text "personalia"
+    t.text "education"
+    t.text "grant_and_prizes"
+    t.text "residencies"
+    t.text "permanent_installations"
+    t.text "hosting"
+    t.text "teaching"
+    t.text "membership"
+    t.text "scientific"
+    t.integer "profil_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["profil_id"], name: "index_cv_on_profil_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -74,10 +79,9 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_15_081839) do
     t.index ["work_id"], name: "index_photos_on_work_id"
   end
 
-  create_table "profils", force: :cascade do |t|
+  create_table "profil", force: :cascade do |t|
     t.text "about"
     t.string "pic_url"
-    t.string "cv_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
@@ -99,7 +103,8 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_15_081839) do
     t.datetime "updated_at", null: false
   end
 
-  add_foreign_key "addresses", "profils"
+  add_foreign_key "addresses", "profil"
+  add_foreign_key "cv", "profil"
   add_foreign_key "photos", "works"
   add_foreign_key "videos", "works"
 end

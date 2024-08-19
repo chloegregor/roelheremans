@@ -1,9 +1,6 @@
 
-/*
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+
+/* * {
   border-style: solid;
   border-color: brown;
   border-width:1px ;
@@ -14,17 +11,22 @@
 
 } */
 
-.list {
+.scroll {
 
   width: 300px;
   height: 100vh;
-  overflow: scroll;
+  overflow-y: auto;
   position: fixed;
 }
 
+.list{
+ margin: 4em 0 4em 0;
+}
+
+
 .explore,
 .show{
-margin:4em 0 4em 300px;
+margin:0 0 0 300px;
 width: calc(100% - 300px);
 display: flex;
 flex-direction: column;
@@ -46,15 +48,13 @@ align-items: center;
   flex-direction: column;
   flex-wrap: wrap;
   align-items: center;
+  margin: 4em 0 4em 0;
 }
 
 .work{
   display: flex;
   flex-direction: column;
-  flex-wrap: wrap;
-  align-items: left;
   width: 600px;
-
 }
 
 @keyframes rotate {
@@ -85,10 +85,18 @@ align-items: center;
 }
 
 .video{
-  margin-bottom: 2em;
+  margin-bottom: 1em;
+
 }
 
 .entete{
   width: 100%;
   margin-bottom: 3em;
+}
+.marginbottom{
+  margin-bottom: 1em;
+}
+
+.margintop{
+  margin-top: 2em;
 }
