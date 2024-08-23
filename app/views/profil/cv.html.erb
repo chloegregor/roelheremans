@@ -9,9 +9,10 @@
         <% color_class = "color-hover#{index % 4}"%>
         <li><%= link_to w.title, work_path(w.id), class:'link'" #{color_class}"%></li>
         <%end%>
-        <li><%= link_to "cv", cv_profil_path, class: 'link'%></li>
+        <li class="margintop"><%= link_to "cv", cv_profil_path, class: 'link'%></li>
         <li><%= link_to "about", about_profil_path, class: 'link'%></li>
         <li><%= link_to "contact", contact_profil_path, class: 'link'%></li>
+          <%= render 'shared/copyright' %>
       </ul>
 
     </div>

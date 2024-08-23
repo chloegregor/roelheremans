@@ -1,4 +1,5 @@
 class ProfilController < ApplicationController
+  before_action :set_works
 
   def about
   end

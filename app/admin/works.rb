@@ -9,6 +9,7 @@ ActiveAdmin.register Work do
                 photos_attributes: [:id, :url, :legend, :cover, :_destroy],
                 videos_attributes: [:id, :url, :cover, :_destroy]
 
+
   form do |f|
     f.inputs 'Work' do
       f.input :title
