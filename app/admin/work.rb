@@ -9,6 +9,9 @@ ActiveAdmin.register Work do
                 photos_attributes: [:id, :url, :legend, :cover, :_destroy],
                 videos_attributes: [:id, :url, :cover, :_destroy]
 
+  action_item :new_work, only: :show do
+    link_to 'New Work', new_admin_work_path
+  end
 
   form do |f|
     f.inputs 'Work' do

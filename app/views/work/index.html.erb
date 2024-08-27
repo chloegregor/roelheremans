@@ -1,22 +1,8 @@
 <div class="flex">
   <div class="scroll ">
     <div class="list">
-        <%= link_to root_path do %>
-          <%=image_tag 'https://res.cloudinary.com/dmbutdgsi/image/upload/v1611342976/logo_ef1290df81.png', class:"logo" %>
-        <%end %>
-        <ul>
-          <% combined_items = @works + [{ title: "cv", path: cv_profil_path }, { title: "about", path: about_profil_path }, { title: "contact", path: contact_profil_path }] %>
-
-          <% combined_items.each_with_index do |item, index| %>
-            <% color_class = "color-hover#{index % 4}" %>
-            <li>
-              <%= link_to item[:title], item[:path] || work_path(item.id), class: "link #{color_class}" %>
-            </li>
-          <% end %>
-
-          <%= render 'shared/copyright' %>
-        </ul>
-      </div>
+      <%= render 'shared/list'%>
+    </div>
   </div>
 
   <div class="explore">
