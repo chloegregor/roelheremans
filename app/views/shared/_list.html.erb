@@ -6,23 +6,29 @@
           <% @works.each_with_index do |work, index| %>
             <% hover_class = "color-hover#{index % 4}" %>
             <% active_class = "color-active#{index % 4}" %>
-            <% is_active = current_page?(work_path(work.id)) ? active_class : '' %>
+            <% is_active = current_page?(work_path(work.id)) ? active_class : hover_class %>
             <li>
 
-              <%= link_to work.title, work_path(work.id), class: "link #{hover_class} #{is_active}" %>
+              <%= link_to work.title, work_path(work.id), class: "link #{is_active}" %>
 
             </li>
           <% end %>
 
           <%base_index = @works.size%>
+          <% hover_class = base_index % 4 %>
+          <% active_class = base_index % 4 %>
+
 
           <li class="margintop">
-            <%= link_to "About", about_profil_path, class: "link color-hover#{base_index % 4}" %>
+            <% is_active = current_page?(about_profil_path) ? "color-active#{active_class}" : "color-hover#{hover_class}" %>
+            <%= link_to "About", about_profil_path, class: "link #{is_active}" %>
           </li>
           <li>
-            <%= link_to "CV", cv_profil_path, class: "link color-hover#{(base_index + 1) % 4}" %>
+            <% is_active = current_page?(cv_profil_path) ? "color-active#{active_class +1}" : "color-hover#{hover_class +1}" %>
+            <%= link_to "CV", cv_profil_path, class: "link #{is_active}" %>
           <li>
-            <%= link_to "Contact", contact_profil_path, class: "link color-hover#{(base_index + 1) % 4}" %>
+          <% is_active = current_page?(contact_profil_path) ? "color-active#{active_class +2}" : "color-hover#{hover_class +2}" %>
+            <%= link_to "Contact", contact_profil_path, class: "link #{is_active}" %>
           </li>
 
 

@@ -13,21 +13,21 @@
 
 .scroll {
 
-  width: 300px;
+  width: 220px;
   height: 100vh;
   overflow-y: auto;
   position: fixed;
 }
 
 .list{
- margin: 4em 0 4em 0;
+ margin: 4em 0 4em 2.5em;
 }
 
 
 .explore,
 .show{
-margin:0 0 0 300px;
-width: calc(100% - 300px);
+margin:0 0 0 220px;
+width: calc(100% - 220px);
 display: flex;
 flex-direction: column;
 flex-wrap: wrap;
@@ -75,7 +75,6 @@ align-items: center;
 .logo {
   width: 30px;
   height: 30px;
-  margin-left: 1.5em;
   margin-bottom: 1em;
   animation: rotate 5.5s infinite;
   }
