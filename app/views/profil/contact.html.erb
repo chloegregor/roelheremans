@@ -1,19 +1,7 @@
 <div class="flex">
   <div class="scroll">
     <div class="list">
-      <%= link_to root_path do %>
-        <%=image_tag 'https://res.cloudinary.com/dmbutdgsi/image/upload/v1611342976/logo_ef1290df81.png', class:"logo" %>
-        <%end %>
-      <ul>
-        <% @works.each_with_index do |w,index|%>
-        <% color_class = "color-hover#{index % 4}"%>
-        <li><%= link_to w.title, work_path(w.id), class:'link'" #{color_class}"%></li>
-        <%end%>
-        <li><%= link_to "cv", cv_profil_path, class: 'link'%></li>
-        <li><%= link_to "about", about_profil_path, class: 'link'%></li>
-        <li><%= link_to "contact", contact_profil_path, class: 'link'%></li>
-      </ul>
-
+      <%= render 'shared/list'%>
     </div>
   </div>
    <div class="show">
@@ -27,7 +15,7 @@
         <p class='marginbottom'><%= contact.country%></p>
         <p><%= contact.phone_number%></p>
         <p><%= contact.email%></p>
-        <%=link_to contact.website, contact.website, class:'link', target:'_blank'%>
+        <%=link_to contact.website, "https://#{contact.website}", class:'link', target:'_blank'%>
         <%end%>
 
       </div>

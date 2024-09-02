@@ -1,20 +1,8 @@
 <div class="flex">
   <div class="scroll">
-    <div class="list">
-      <%= link_to root_path do %>
-        <%=image_tag 'https://res.cloudinary.com/dmbutdgsi/image/upload/v1611342976/logo_ef1290df81.png', class:"logo" %>
-      <%end %>
-      <ul>
-        <% @works.each_with_index do |w,index|%>
-        <% color_class = "color-hover#{index % 4}"%>
-        <li><%= link_to w.title, work_path(w.id), class:'link'" #{color_class}"%></li>
-        <%end%>
-        <li><%= link_to "cv", cv_profil_path, class: 'link' %></li>
-        <li><%= link_to "about", about_profil_path, class: 'link'%></li>
-        <li><%= link_to "contact", contact_profil_path, class: 'link'%></li>
-      </ul>
 
-    </div>
+      <%= render 'shared/list'%>
+    
   </div>
   <div class="show">
     <div class="container">
@@ -24,11 +12,21 @@
           <h2><%= @work.year %></h2>
         </div>
         <div class="image">
+
           <%first_photo = @work.photos.first%>
-        <%= image_tag first_photo.url, alt: first_photo.legend %>
-        <% if first_photo.legend.present?%>
-            <p class="legend"><%= first_photo.legend %></p>
-        <%end %>
+            <% if first_photo.present?%>
+              <%= image_tag first_photo.url, alt: first_photo.legend %>
+              <% if first_photo.legend.present?%>
+                  <p class="legend"><%= first_photo.legend %></p>
+              <%end %>
+            <%elsif%>
+              <%first_video = @work.videos.first%>
+              <% if first_video.present?%>
+                <iframe width="600" height="337.5" src="https://www.youtube.com/embed/<%=first_video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
+              <%end %>
+            <%else%>
+            <p>no image or video</p>
+           <%end %>
         </div>
         <div class="paragraph">
         <%= simple_format(@work.description)%>
@@ -42,13 +40,11 @@
             <%end %>
           </div>
         <%end %>
-        <% if @work.videos.any? %>
           <% @work.videos.each do |video| %>
             <div class="video">
               <iframe width="600" height="337.5" src="https://www.youtube.com/embed/<%=video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
             </div>
           <%end %>
-        <%end %>
       </div>
   </div>
 </div>

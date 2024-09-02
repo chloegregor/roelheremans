@@ -1,8 +1,8 @@
 class Profil < ApplicationRecord
   has_many :addresses, dependent: :destroy
-  has_one :cv, dependent: :destroy
+  has_many :cv_categories, dependent: :destroy
   accepts_nested_attributes_for :addresses, allow_destroy: true
-  accepts_nested_attributes_for :cv, allow_destroy: true
+  accepts_nested_attributes_for :cv_categories, allow_destroy: true
 
     self.table_name = "profil"
 
@@ -11,7 +11,7 @@ class Profil < ApplicationRecord
   end
 
   def self.ransackable_associations(auth_object = nil)
-    [:addresses, :cv]
+    [:addresses, :cv_categories]
   end
   def self.instance
     first_or_create!

@@ -1,5 +1,5 @@
 class ApplicationController < ActionController::Base
-  before_action :set_profil, :set_works
+  before_action :set_profil
 
 
   private
