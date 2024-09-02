@@ -4,9 +4,13 @@
         <%end %>
         <ul>
           <% @works.each_with_index do |work, index| %>
-            <% color_class = "color-hover#{index % 4}" %>
+            <% hover_class = "color-hover#{index % 4}" %>
+            <% active_class = "color-active#{index % 4}" %>
+            <% is_active = current_page?(work_path(work.id)) ? active_class : '' %>
             <li>
-              <%= link_to work.title, work_path(work.id), class: "link #{color_class}" %>
+
+              <%= link_to work.title, work_path(work.id), class: "link #{hover_class} #{is_active}" %>
+
             </li>
           <% end %>
 

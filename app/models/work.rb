@@ -5,6 +5,9 @@ class Work < ApplicationRecord
   accepts_nested_attributes_for :photos, allow_destroy: true
   accepts_nested_attributes_for :videos, allow_destroy: true
 
+  validates :title, :description, :year, presence: true
+  
+
 
   def self.ransackable_attributes(auth_object = nil)
     %w[id title description year created_at updated_at]
