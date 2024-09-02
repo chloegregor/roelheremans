@@ -5,7 +5,7 @@ class ProfilController < ApplicationController
   end
 
   def cv
-    @cv = @profil.cv
+    @cv_categories = @profil.cv_categories
   end
 
   def contact

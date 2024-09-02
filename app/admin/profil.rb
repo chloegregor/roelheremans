@@ -7,7 +7,7 @@ ActiveAdmin.register Profil do
   #
   permit_params :about, :pic_url,
                 addresses_attributes: %w[id title street zip_code city country phone_number email website destroy],
-                cv_attributes: %w[id exhibitions personalia education grant_and_prizes residencies permanent_installations hosting teaching membership scientific destroy]
+                cv_categories_attributes: %w[id category_title content destroy]
 
 
   form do |f|
@@ -28,17 +28,9 @@ ActiveAdmin.register Profil do
       end
     end
     f.inputs 'CV' do
-      f.semantic_fields_for :cv, f.object.cv || Cv.new do |cv|
-        cv.input :exhibitions
-        cv.input :personalia
-        cv.input :education
-        cv.input :grant_and_prizes
-        cv.input :residencies
-        cv.input :permanent_installations
-        cv.input :hosting
-        cv.input :teaching
-        cv.input :membership
-        cv.input :scientific
+      f.has_many :cv_categories, heading: false, allow_destroy: true do |cv|
+        cv.input :category_title
+        cv.input :content
       end
     end
     f.actions

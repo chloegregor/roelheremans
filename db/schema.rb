@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_08_19_083119) do
+ActiveRecord::Schema[7.1].define(version: 2024_09_02_154446) do
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
     t.text "body"
@@ -52,21 +52,13 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_19_083119) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
-  create_table "cv", force: :cascade do |t|
-    t.text "exhibitions"
-    t.text "personalia"
-    t.text "education"
-    t.text "grant_and_prizes"
-    t.text "residencies"
-    t.text "permanent_installations"
-    t.text "hosting"
-    t.text "teaching"
-    t.text "membership"
-    t.text "scientific"
+  create_table "cv_categories", force: :cascade do |t|
     t.integer "profil_id", null: false
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
-    t.index ["profil_id"], name: "index_cv_on_profil_id"
+    t.string "category_title"
+    t.text "content"
+    t.index ["profil_id"], name: "index_cv_categories_on_profil_id"
   end
 
   create_table "photos", force: :cascade do |t|
@@ -104,7 +96,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_08_19_083119) do
   end
 
   add_foreign_key "addresses", "profil"
-  add_foreign_key "cv", "profil"
+  add_foreign_key "cv_categories", "profil"
   add_foreign_key "photos", "works"
   add_foreign_key "videos", "works"
 end
