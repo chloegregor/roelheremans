@@ -31,7 +31,7 @@ RUN apt-get update -qq && \
 RUN gem update --system && \
     gem install bundler -v '2.5.14'
 
-RUN apt update && apt install -y libpq-dev  \
+RUN apt update && apt install -y postgresql postgresql-contrib libpq-dev postgresql-client  \
   && rm -rf /var/lib/apt/lists/*
 
 # Install application gems
