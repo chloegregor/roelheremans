@@ -16,6 +16,9 @@ ENV RAILS_ENV="production" \
 # Throw-away build stage to reduce size of final image
 FROM base as build
 
+# Utiliser l'utilisateur root
+USER root
+
 # Install packages needed to build gems and `ffi`
 RUN apt-get update -qq && \
     apt-get install --no-install-recommends -y \
@@ -25,14 +28,17 @@ RUN apt-get update -qq && \
     pkg-config \
     libffi-dev \
     libsqlite3-dev \
+    libpq-dev \
+    postgresql-client \
+    && rm -rf /var/lib/apt/lists/*
+
+RUN apt update && apt install -y postgresql postgresql-contrib libpq-dev postgresql-client  \
     && rm -rf /var/lib/apt/lists/*
 
 # Update RubyGems and install Bundler
 RUN gem update --system && \
     gem install bundler -v '2.5.14'
 
-RUN apt update && apt install -y postgresql postgresql-contrib libpq-dev postgresql-client  \
-  && rm -rf /var/lib/apt/lists/*
 
 # Install application gems
 COPY Gemfile Gemfile.lock ./
@@ -58,6 +64,7 @@ RUN apt-get update -qq && \
     curl \
     libsqlite3-0 \
     libvips \
+    postgresql postgresql-contrib libpq-dev postgresql-client \
     && rm -rf /var/lib/apt/lists/* /var/cache/apt/archives/*
 
 
