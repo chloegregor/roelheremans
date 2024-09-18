@@ -6,7 +6,7 @@ class Work < ApplicationRecord
   accepts_nested_attributes_for :videos, allow_destroy: true
 
   validates :title, :description, :year, presence: true
-  
+  validate :has_cover
 
 
   def self.ransackable_attributes(auth_object = nil)
@@ -15,6 +15,15 @@ class Work < ApplicationRecord
 
   def self.ransackable_associations(auth_object = nil)
     %w[photos videos]
+  end
+
+
+private
+
+  def has_cover
+    unless photos.any? {|photo| photo.cover?} || videos.any? {|video| video.cover?}
+      errors.add(:base, "Il faut au moins une photo ou une vidéo de couverture")
+    end
   end
 
 end

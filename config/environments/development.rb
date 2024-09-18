@@ -74,9 +74,4 @@ Rails.application.configure do
   # Raise error when a before_action's only/except options reference missing actions
   config.action_controller.raise_on_missing_callback_actions = true
 
-  config.hosts << "6210-2a02-8440-a201-215f-dd56-229a-38ee-fe67.ngrok-free.app"
-# Ajouter l'hôte Ngrok à la liste des hôtes autorisés
-  config.hosts << "a63d-2a02-8440-3341-8544-688e-d06d-547d-7ec1.ngrok-free.app"
-
-
 end

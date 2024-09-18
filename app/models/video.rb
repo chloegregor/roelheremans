@@ -1,5 +1,6 @@
 class Video < ApplicationRecord
   belongs_to :work
+  validates :url, presence: true
 
   def self.ransackable_attributes(auth_object = nil)
     %w[url cover created_at updated_at]

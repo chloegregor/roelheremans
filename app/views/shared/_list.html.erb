@@ -4,8 +4,8 @@
         <%end %>
         <ul>
           <% @works.each_with_index do |work, index| %>
-            <% hover_class = "color-hover#{index % 4}" %>
-            <% active_class = "color-active#{index % 4}" %>
+            <% hover_class = "color-hover#{(index + 1) % 4}" %>
+            <% active_class = "color-active#{(index + 1) % 4}" %>
             <% is_active = current_page?(work_path(work.id)) ? active_class : hover_class %>
             <li>
 
@@ -19,16 +19,25 @@
           <% active_class = base_index % 4 %>
 
 
-          <li class="margintop">
-            <% is_active = current_page?(about_profil_path) ? "color-active#{active_class}" : "color-hover#{hover_class}" %>
+          <%# <div class="box">
+          <div class="point"></div></div> %>
+          <li class="margintop2">
+            <% is_active = current_page?(about_profil_path) ? "color-active#{(base_index + 1) %4}" : "color-hover#{(base_index +1)%4}" %>
             <%= link_to "About", about_profil_path, class: "link #{is_active}" %>
           </li>
           <li>
-            <% is_active = current_page?(cv_profil_path) ? "color-active#{active_class +1}" : "color-hover#{hover_class +1}" %>
+            <% is_active = current_page?(cv_profil_path) ? "color-active#{(base_index + 2) %4}" : "color-hover#{(base_index + 2) %4}" %>
             <%= link_to "CV", cv_profil_path, class: "link #{is_active}" %>
+          </li>
           <li>
-          <% is_active = current_page?(contact_profil_path) ? "color-active#{active_class +2}" : "color-hover#{hover_class +2}" %>
+          <% is_active = current_page?(contact_profil_path) ? "color-active#{(base_index + 3) %4}" : "color-hover#{(base_index + 3) %4}" %>
             <%= link_to "Contact", contact_profil_path, class: "link #{is_active}" %>
+          </li>
+           <%# <div class="box">
+          <div class="point"></div></div> %>
+          <li class="margintop2">
+            <% is_active = current_page?(newsletter_profil_path) ? "color-active#{(base_index + 4) %4}" : "color-hover#{(base_index + 4) %4}" %>
+            <%= link_to "Newsletter", newsletter_profil_path, class: "link #{is_active}" %>
           </li>
 
 

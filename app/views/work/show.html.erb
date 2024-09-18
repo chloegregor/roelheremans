@@ -2,7 +2,7 @@
   <div class="scroll">
 
       <%= render 'shared/list'%>
-    
+
   </div>
   <div class="show">
     <div class="container">
@@ -22,13 +22,15 @@
             <%elsif%>
               <%first_video = @work.videos.first%>
               <% if first_video.present?%>
-                <iframe width="600" height="337.5" src="https://www.youtube.com/embed/<%=first_video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
+                <div class="video video-container">
+                  <iframe width="" height="" src="https://www.youtube.com/embed/<%=first_video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
+                </div>
               <%end %>
             <%else%>
             <p>no image or video</p>
            <%end %>
         </div>
-        <div class="paragraph">
+        <div class="paragraph margintop1 marginbottom4">
         <%= simple_format(@work.description)%>
         </div>
         <%other_photos = @work.photos.drop(1) %>
@@ -41,8 +43,8 @@
           </div>
         <%end %>
           <% @work.videos.each do |video| %>
-            <div class="video">
-              <iframe width="600" height="337.5" src="https://www.youtube.com/embed/<%=video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
+            <div class=" video video-container">
+              <iframe width="" height="" src="https://www.youtube.com/embed/<%=video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
             </div>
           <%end %>
       </div>

@@ -1,20 +1,18 @@
 <div class="flex">
   <div class="scroll">
-    <div class="list">
       <%= render 'shared/list'%>
-    </div>
   </div>
    <div class="show">
     <div class="container">
       <div class="work">
         <div class="entete"><h1>Contact</h1></div>
         <% @contacts.each do |contact|%>
-        <h2 class='marginbottom'><%=contact.title%></h2>
-        <p> <%= contact.street%></p>
-        <p><%= contact.zip_code%>, <%=contact.city%></p>
-        <p class='marginbottom'><%= contact.country%></p>
-        <p><%= contact.phone_number%></p>
-        <p><%= contact.email%></p>
+        <h2 class='marginbottom1 bold'><%=contact.title%></h2>
+        <div class="paragraph black"> <%= contact.street%></div>
+        <div class="paragraph black"><%= contact.zip_code%>, <%=contact.city%></div>
+        <div class='marginbottom1 paragraph black'><%= contact.country%></div>
+        <div class= "paragraph black"><%= contact.phone_number%></div>
+        <div class= "paragraph black"><%= contact.email%></div>
         <%=link_to contact.website, "https://#{contact.website}", class:'link', target:'_blank'%>
         <%end%>
 

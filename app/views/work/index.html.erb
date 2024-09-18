@@ -13,16 +13,18 @@
             <% cover_photo = w.photos.where(cover: true).first%>
             <% cover_video = w.videos.where(cover: true).first%>
               <%if cover_photo %>
-                <%=image_tag cover_photo.url%>
+                <%=image_tag cover_photo.url.sub('/upload/' ,'/upload/f_auto,q_auto:low/')%>
               <%elsif cover_video%>
-                <iframe width="600" height="337.5" src="https://www.youtube.com/embed/<%=cover_video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
+                <div class="video-container">
+                  <iframe width="" height="" src="https://www.youtube.com/embed/<%=cover_video.youtube_id%>" frameborder="0" allowfullscreen></iframe>
+                </div>
               <%end%>
             <%end %>
             <% txtlink = "#{w.title}, #{w.year}"%>
               <%= link_to txtlink, work_path(w.id), class:'link'%>
         </div>
       <%end %>
-      
+
     </div>
   </div>
 </div>

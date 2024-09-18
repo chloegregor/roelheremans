@@ -18,4 +18,6 @@ class ApplicationController < ActionController::Base
     @work = Work.find(params[:id])
   end
 
+  def newsletter
+  end
 end

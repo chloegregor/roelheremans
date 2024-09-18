@@ -1,5 +1,6 @@
 class Photo < ApplicationRecord
   belongs_to :work
+  validates :url, presence: true
 
 
   def self.ransackable_attributes(auth_object = nil)
@@ -9,4 +10,6 @@ class Photo < ApplicationRecord
   def self.ransackable_associations(auth_object = nil)
     %w[work]
   end
+
+  
 end

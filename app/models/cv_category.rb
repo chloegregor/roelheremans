@@ -1,5 +1,7 @@
 class CvCategory < ApplicationRecord
   belongs_to :profil
+  validates :category_title, presence: true
+  validates :content, presence: true
 
 
   def self.ransackable_attributes(auth_object = nil)

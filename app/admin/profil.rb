@@ -6,8 +6,8 @@ ActiveAdmin.register Profil do
   # Uncomment all parameters which should be permitted for assignment
   #
   permit_params :about, :pic_url,
-                addresses_attributes: %w[id title street zip_code city country phone_number email website destroy],
-                cv_categories_attributes: %w[id category_title content destroy]
+                addresses_attributes: %w[id title street zip_code city country phone_number email website _destroy],
+                cv_categories_attributes: %w[id category_title content _destroy]
 
 
   form do |f|

@@ -16,9 +16,16 @@
 
 @import 'assets/stylesheets/disposition.css';
 @import 'assets/stylesheets/font.css';
+@import 'assets/stylesheets/form';
 
 
 
 body{
   background-color: #f9f9f9;
+  height: 100%;
+
+}
+
+html{
+  height: 100%;
 }

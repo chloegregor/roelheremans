@@ -6,7 +6,7 @@ h1{
   color: black;
   margin: 0px 0px 0.1em 0px;
   font-weight: bold;
-  font-size: 2em;
+  font-size: 1.5em;
 }
 
 h2{
@@ -17,10 +17,18 @@ h2{
   margin: 0px 0px 0em 0px;
   font-size: 1em;
 }
+
+h3{
+  font-family: 'Inter', sans-serif;
+  color: black;
+  margin: 0px 0px 0.1em 0px;
+  font-weight:normal;
+  margin: 0px 0px 0em 0px;
+  font-size: 0.8em;
+}
 .paragraph{
-  font-family: 'Roboto', sans-serif;
-  font-size: 1.2em;
-  margin: 2em 0px 4em 0px;
+  font-family: 'Inter', sans-serif;
+  font-size: 0.9em;
   text-align: justify;
   width: 100%;
 }
@@ -28,7 +36,7 @@ h2{
 .list .link {
   font-family: 'Roboto', sans-serif;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 1em;
   color: black;
 }
 
@@ -36,7 +44,7 @@ h2{
   font-family: 'Roboto', sans-serif;
   color: black;
   text-decoration: none;
-  font-size: 1.2em;
+  font-size: 0.9em;
   margin: 1em 0 1em 0
 }
 
@@ -63,40 +71,40 @@ li{
 }
 /* Additional CSS rules for your app */
 
-.color-hover0:hover{
-  color: #ff3f3f;
-}
-
-.list .color-active0{
-  color: #ff3f3f;
-}
-
 .color-hover1:hover{
-  color: #568337;
+  color: #ff3f3f;
 }
 
 .list .color-active1{
-  color: #568337;
+  color: #ff3f3f;
 }
 
 .color-hover2:hover{
-  color: #e5e234;
+  color: #568337;
 }
 
 .list .color-active2{
-  color: #e5e234;
+  color: #568337;
 }
 
 .color-hover3:hover{
-  color: #0170C0;
+  color: #e5e234;
 }
 
 .list .color-active3{
+  color: #e5e234;
+}
+
+.color-hover0:hover{
+  color: #0170C0;
+}
+
+.list .color-active0{
   color: #0170C0;
 }
 
 p{
-  margin:0;
+  margin-bottom:0.5em;
   color: black;
   font-family: 'Inter';
 
@@ -108,10 +116,44 @@ p{
 
 .black{
   color: black;
-  font-size: 1.3em;
 }
 
 .grey{
   color: rgb(117, 117, 117);
-  font-size: 0.8em;
+}
+
+@media(max-width: 480px){
+  h1{
+    font-size: 1.2em;
+  }
+
+  h2{
+    font-size: 0.8em;
+  }
+
+  .paragraph{
+    font-size: 0.7em;
+
+  }
+
+  .list .link {
+    font-size: 0.8em;
+  }
+
+  .container .link {
+    font-size: 0.7em;
+  }
+
+  .legend{
+    font-size: 0.6em;
+  }
+
+
+
+  li{
+    margin-top:0.5em;
+  }
+
+
+
 }

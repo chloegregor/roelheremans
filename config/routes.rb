@@ -14,7 +14,9 @@ Rails.application.routes.draw do
     get 'cv', to: 'profil#cv'
     get 'about', to: 'profil#about'
     get 'contact', to: 'profil#contact'
+    get 'newsletter', to: 'profil#newsletter'
   end
+
   # Define the root path route ("/")
 
   # Defines the root path route ("/")

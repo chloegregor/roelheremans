@@ -12,4 +12,5 @@ class ProfilController < ApplicationController
     @contacts = @profil.addresses
 
   end
+
 end
