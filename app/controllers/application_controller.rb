@@ -1,6 +1,6 @@
 class ApplicationController < ActionController::Base
   before_action :set_profil
-  before_action :set_works
+  # before_action :set_works
 
 
 def set_work
