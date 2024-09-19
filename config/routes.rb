@@ -10,12 +10,12 @@ Rails.application.routes.draw do
 
   root "work#index"
   resources :work, only: %i[index show]
-  resource :profil, only: [] do
-    get 'cv', to: 'profil#cv'
-    get 'about', to: 'profil#about'
-    get 'contact', to: 'profil#contact'
-    get 'newsletter', to: 'profil#newsletter'
-  end
+
+  get 'cv', to: 'profil#cv'
+  get 'about', to: 'profil#about'
+  get 'contact', to: 'profil#contact'
+  
+  get 'newsletter', to: 'profil#newsletter'
 
   # Define the root path route ("/")
 
