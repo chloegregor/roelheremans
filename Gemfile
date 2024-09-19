@@ -82,3 +82,5 @@ gem 'kaminari'
 gem "dockerfile-rails", ">= 1.6", :group => :development
 
 gem 'ffi', '1.17.0.rc2'
+
+gem 'friendly_id', '~> 5.5.0'

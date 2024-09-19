@@ -7,7 +7,7 @@ class WorkController < ApplicationController
 
   def show
     @works = Work.order(year: :desc)
-    @work = Work.find(params[:id])
+    @work = Work.friendly.find(params[:id])
   end
 
 
