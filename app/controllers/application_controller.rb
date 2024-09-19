@@ -5,6 +5,7 @@ class ApplicationController < ActionController::Base
 
 def set_work
   @work = Work.friendly.find(params[:id])
+  render 'work/show'
 end
 
 private

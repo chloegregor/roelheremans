@@ -8,6 +8,7 @@ class WorkController < ApplicationController
   def show
     @works = Work.order(year: :desc)
     @work = Work.friendly.find(params[:id])
+    render 'work/show'
   end
 
 

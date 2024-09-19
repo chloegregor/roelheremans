@@ -8,6 +8,7 @@ class Work < ApplicationRecord
   validates :title, :description, :year, presence: true
   validates :title, uniqueness: true
   validate :has_cover
+  
   extend FriendlyId
   friendly_id :title, use: :slugged
 
