@@ -9,7 +9,7 @@
             <% is_active = current_page?(work_path(work.id)) ? active_class : hover_class %>
             <li>
 
-              <%= link_to work.title, work_path(work.id), class: "link #{is_active}" %>
+              <%= link_to work.title, work_path(work), class: "link #{is_active}" %>
 
             </li>
           <% end %>

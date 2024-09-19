@@ -97,6 +97,7 @@ ActiveRecord::Schema[7.1].define(version: 2024_09_19_080116) do
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
     t.string "slug"
+    t.index ["slug"], name: "index_works_on_slug", unique: true
   end
 
   add_foreign_key "addresses", "profil"

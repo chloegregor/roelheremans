@@ -1,4 +1,5 @@
 ActiveAdmin.setup do |config|
+
   # == Site Title
   #
   # Set the title that is displayed on the main layout
@@ -349,4 +350,19 @@ ActiveAdmin.setup do |config|
   # You can switch to using Webpacker here.
   #
   # config.use_webpacker = true
+  #
+
+
+
+end
+
+Rails.application.configure do
+  config.after_initialize do
+    ActiveAdmin::ResourceController.class_eval do
+      def find_resource
+        finder = resource_class.is_a?(FriendlyId) ? :slug : :id
+        scoped_collection.find_by(finder => params[:id])
+      end
+    end
+  end
 end

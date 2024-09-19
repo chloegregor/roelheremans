@@ -1,4 +1,4 @@
-class WorkController < ApplicationController
+class WorksController < ApplicationController
 
   def index
     @works = Work.order(year: :desc)
@@ -8,7 +8,7 @@ class WorkController < ApplicationController
   def show
     @works = Work.order(year: :desc)
     @work = Work.friendly.find(params[:id])
-    
-    redirect_to @work
+    # render 'works/show'
+
   end
 end

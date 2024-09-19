@@ -1,9 +1,9 @@
 class ApplicationController < ActionController::Base
   before_action :set_profil
-  before_action :set_works
 
 
   def set_work
+    @work = Work.friendly.find(params[:id])
   end
 
   private

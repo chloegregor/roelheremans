@@ -8,8 +8,9 @@ class Work < ApplicationRecord
   validates :title, :description, :year, presence: true
   validates :title, uniqueness: true
   validate :has_cover
+
   extend FriendlyId
-  friendly_id :title, use: :slugged
+  friendly_id :title, use: [:slugged, :finders]
 
 
   def self.ransackable_attributes(auth_object = nil)
