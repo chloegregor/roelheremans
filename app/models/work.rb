@@ -6,7 +6,10 @@ class Work < ApplicationRecord
   accepts_nested_attributes_for :videos, allow_destroy: true
 
   validates :title, :description, :year, presence: true
+  validates :title, uniqueness: true
   validate :has_cover
+  extend FriendlyId
+  friendly_id :title, use: :slugged
 
 
   def self.ransackable_attributes(auth_object = nil)
