@@ -6,7 +6,7 @@
           <% @works.each_with_index do |work, index| %>
             <% hover_class = "color-hover#{(index + 1) % 4}" %>
             <% active_class = "color-active#{(index + 1) % 4}" %>
-            <% is_active = current_page?(work_path(work.id)) ? active_class : hover_class %>
+            <% is_active = current_page?(work_path(work)) ? active_class : hover_class %>
             <li>
 
               <%= link_to work.title, work_path(work), class: "link #{is_active}" %>
