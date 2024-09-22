@@ -120,6 +120,7 @@ p{
 
 .grey{
   color: rgb(117, 117, 117);
+  font-size: 0.8em;
 }
 
 @media(max-width: 480px){
